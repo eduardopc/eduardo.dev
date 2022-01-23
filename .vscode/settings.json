@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "colorize.languages": ["javascript", "typescript", "json"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

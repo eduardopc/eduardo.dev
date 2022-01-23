@@ -1,0 +1,10 @@
+{
+  "name": "Eduardo Pacheco Celeste - Portfolio",
+  "short_name": "Portfolio",
+  "icons": [],
+  "background_color": "#06092B",
+  "description": "Website built to serve as a portfolio to the articles and projects written by Eduardo Pacheco Celeste",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#32322C"
+}
