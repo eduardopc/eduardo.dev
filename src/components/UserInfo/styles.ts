@@ -9,6 +9,20 @@ export const Wrapper = styled.div`
   text-align: center;
 `
 
+export const ImageContent = styled.div`
+  justify-content: center;
+`
+
+export const Image = styled.img`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.primary};
+    width: 12.5rem;
+    height: 12.5rem;
+    border-radius: 100%;
+    margin-bottom: ${theme.spacings.xsmall};
+  `}
+`
+
 export const Role = styled.div`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.xsmall};

@@ -1,27 +1,31 @@
 import Heading from 'components/Heading'
 import SocialLinks from 'components/SocialLinks'
 import { SIDEINFO } from 'languages'
+import { useEffect, useState } from 'react'
 import * as S from './styles'
 
-const UserInfo = () => {
-  // const [mediumData, setMediumData] = useState([])
-  // const [isLoading, setIsLoading] = useState(true)
+interface IGitHubUserInfo {
+  image: 'string'
+  alt: 'string'
+}
 
-  // useEffect(() => {
-  //   fetch(
-  //     `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@pacheco.eduardo`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((response) => {
-  //       setMediumData(response.items)
-  //       setIsLoading(false)
-  //     })
-  //     .catch((err) => console.log(err))
-  // }, [])
+const UserInfo = () => {
+  const [userInfo, setUserInfo] = useState<IGitHubUserInfo>()
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/eduardopc`)
+      .then((res) => res.json())
+      .then((response) => {
+        setUserInfo({ image: response.avatar_url, alt: response.login })
+      })
+      .catch((err) => console.log(err))
+  }, [])
 
   return (
     <S.Wrapper>
-      {/* <Image /> */}
+      <S.ImageContent>
+        <S.Image src={userInfo?.image} alt={userInfo?.alt} />
+      </S.ImageContent>
       <Heading size="medium">{SIDEINFO.name}</Heading>
       <S.Role>
         <Heading size="small" color="secondary">
