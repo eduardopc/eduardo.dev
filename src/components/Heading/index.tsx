@@ -9,6 +9,7 @@ export type HeadingProps = {
   lineBottom?: boolean
   size?: 'small' | 'medium' | 'huge'
   lineColor?: 'primary' | 'secondary'
+  margin?: boolean
 }
 
 const Heading = ({
@@ -17,7 +18,8 @@ const Heading = ({
   lineColor = 'primary',
   lineLeft = false,
   lineBottom = false,
-  size = 'medium'
+  size = 'medium',
+  margin = false
 }: HeadingProps) => (
   <S.Wrapper
     color={color}
@@ -25,6 +27,7 @@ const Heading = ({
     lineBottom={lineBottom}
     size={size}
     lineColor={lineColor}
+    margin={margin}
   >
     {children}
   </S.Wrapper>

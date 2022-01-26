@@ -8,6 +8,7 @@ import * as S from './styles'
 import { Divider } from 'components/Divider'
 import MediumArticles from 'components/MediumArticles'
 import { MEDIUMARTICLES } from 'languages'
+import Heading from 'components/Heading'
 
 export interface IArticle {
   guid: 'string'
@@ -41,6 +42,9 @@ const Home = ({ jsonData }: any) => {
         <UserInfo />
         <Divider />
         <section>
+          <Heading size="small" lineLeft lineColor="secondary" margin>
+            {MEDIUMARTICLES.articles}
+          </Heading>
           <S.Grid>
             {mediumData.map((item: IArticle) => (
               <S.Link key={item.title}>

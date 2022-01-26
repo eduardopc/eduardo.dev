@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 export const Divider = styled.div`
   ${({ theme }) => css`
-    margin: ${theme.spacings.xxlarge} auto ${theme.spacings.medium};
+    margin: ${theme.spacings.large} auto ${theme.spacings.medium};
     height: 0.1rem;
     background: rgba(181, 181, 181, 0.3);
     border: 0;

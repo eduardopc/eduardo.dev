@@ -49,7 +49,6 @@ export const ShowMore = styled.div`
     }
 
     > a {
-      color: ${theme.colors.secondary};
       text-decoration: none;
     }
   `}

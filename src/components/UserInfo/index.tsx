@@ -1,4 +1,5 @@
 import Heading from 'components/Heading'
+import Skills from 'components/Skills'
 import SocialLinks from 'components/SocialLinks'
 import { SIDEINFO } from 'languages'
 import * as S from './styles'
@@ -17,6 +18,7 @@ const UserInfo = () => {
       </S.Role>
       <S.Description>{SIDEINFO.description}</S.Description>
       <SocialLinks />
+      <Skills />
     </S.Wrapper>
   )
 }

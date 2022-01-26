@@ -7,7 +7,6 @@ export const SocialLinks = styled.ul`
     display: flex;
     margin-top: ${theme.spacings.large};
     justify-content: space-around;
-    margin-right: ${theme.spacings.medium};
   `}
 `
 

@@ -4,11 +4,15 @@ import media from 'styled-media-query'
 import { HeadingProps, LineColors } from '.'
 
 export const wrapperModifiers = {
+  margin: (theme: DefaultTheme) => css`
+    margin-top: ${theme.font.sizes.large};
+  `,
+
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.large};
 
     &::after {
-      width: 3rem;
+      width: 2rem;
     }
   `,
 
@@ -45,12 +49,14 @@ export const wrapperModifiers = {
 }
 
 export const Wrapper = styled.h2<HeadingProps>`
-  ${({ theme, color, lineLeft, lineBottom, size, lineColor }) => css`
+  ${({ theme, color, lineLeft, lineBottom, size, lineColor, margin }) => css`
     color: ${theme.colors[color!]};
+    margin-top: ${theme.spacings.xxsmall};
 
     // se lineLeft = true entao chama o método wrapperModifiers
     ${lineLeft && wrapperModifiers.lineLeft(theme, lineColor!)};
     ${lineBottom && wrapperModifiers.lineBottom(theme, lineColor!)};
     ${!!size && wrapperModifiers[size](theme)};
+    ${!!margin && wrapperModifiers.margin(theme)};
   `}
 `

@@ -13,5 +13,27 @@ export const SIDEINFO_STRINGS = {
 
 export const MEDIUMARTICLES_STRINGS = {
   uri: 'https://medium.com/@pacheco.eduardo',
-  title: 'link para o medium'
+  title: 'link para o medium',
+  articles: 'Artigos'
+}
+
+export const SKILLS_STRINGS = {
+  skills: 'Tecnologias e Competências',
+  tags: [
+    'TypeScript',
+    'JavaScript',
+    'React',
+    'React Native',
+    'GraphQL',
+    'Node.js',
+    'NextJS',
+    'Jest',
+    'HTML & CSS',
+    'Strapi',
+    'Automated Testing',
+    'Selenium',
+    'Appium',
+    'WebdriverIO',
+    'Flutter'
+  ]
 }
