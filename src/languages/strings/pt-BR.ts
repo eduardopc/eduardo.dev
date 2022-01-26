@@ -10,3 +10,8 @@ export const SIDEINFO_STRINGS = {
   description:
     'Software Engineer com foco em desenvolvimento web e mobile utilizando respectivamente as tecnologias React e React Native.'
 }
+
+export const MEDIUMARTICLES_STRINGS = {
+  uri: 'https://medium.com/@pacheco.eduardo',
+  title: 'link para o medium'
+}

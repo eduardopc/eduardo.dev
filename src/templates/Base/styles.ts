@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   // para deixar o footer sempre na parte de baixo da tela

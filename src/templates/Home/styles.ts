@@ -12,3 +12,45 @@ export const Main = styled(Container)`
     `}
   `}
 `
+
+export const Grid = styled.div`
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-gap: ${theme.spacings.medium};
+    margin: ${theme.spacings.small} 0;
+  `}
+`
+
+export const Link = styled.li`
+  ${({ theme }) => css`
+    display: block;
+    > a {
+      color: ${theme.colors.secondary};
+      text-decoration: none;
+    }
+  `}
+`
+
+export const ShowMore = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: 'center';
+    align-itens: 'center';
+    color: ${theme.colors.secondary};
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    margin: auto;
+
+    > svg {
+      margin-top: -5px;
+      color: ${theme.colors.secondary};
+    }
+
+    > a {
+      color: ${theme.colors.secondary};
+      text-decoration: none;
+    }
+  `}
+`
