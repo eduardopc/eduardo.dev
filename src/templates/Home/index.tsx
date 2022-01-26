@@ -44,7 +44,12 @@ const Home = ({ jsonData }: any) => {
           <S.Grid>
             {mediumData.map((item: IArticle) => (
               <S.Link key={item.title}>
-                <a href={item.link} title={item.title} target="_blank">
+                <a
+                  href={item.link}
+                  title={item.title}
+                  target="_blank"
+                  rel="noopenner, noreferrer"
+                >
                   <MediumArticles key={item.title} {...item} />
                 </a>
               </S.Link>

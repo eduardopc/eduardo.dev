@@ -36,7 +36,12 @@ const SocialLinks = () => {
     <S.SocialLinks>
       {socialMedias.map((item) => (
         <S.Link key={item.socialMedia}>
-          <a href={item.url} title={item.socialMedia} target="_blank">
+          <a
+            href={item.url}
+            title={item.socialMedia}
+            target="_blank"
+            rel="noopenner, noreferrer"
+          >
             {item.icon}
           </a>
         </S.Link>
