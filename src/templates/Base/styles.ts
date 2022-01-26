@@ -18,7 +18,7 @@ export const Content = styled.div`
 export const SectionFooter = styled.section`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.small};
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.primary};
     clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0 100%);
   `}
 `
