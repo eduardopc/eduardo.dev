@@ -1,7 +1,7 @@
 export const FOOTER_STRINGS = {
   content: 'Desenvolvido por ',
   author: 'Eduardo Pacheco Celeste',
-  copyright: ' - 2022 © All rights reserved'
+  copyright: (year: number) => ` - ${year} © All rights reserved`
 }
 
 export const SIDEINFO_STRINGS = {
@@ -14,7 +14,7 @@ export const SIDEINFO_STRINGS = {
 export const MEDIUMARTICLES_STRINGS = {
   uri: 'https://medium.com/@pacheco.eduardo',
   title: 'link para o medium',
-  articles: 'Artigos'
+  articles: 'Últimos artigos publicados'
 }
 
 export const SKILLS_STRINGS = {

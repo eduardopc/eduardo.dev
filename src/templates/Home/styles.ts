@@ -37,7 +37,6 @@ export const ShowMore = styled.div`
     display: flex;
     justify-content: 'center';
     align-itens: 'center';
-    color: ${theme.colors.secondary};
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
@@ -50,6 +49,7 @@ export const ShowMore = styled.div`
 
     > a {
       text-decoration: none;
+      color: ${theme.colors.secondary} !important;
     }
   `}
 `

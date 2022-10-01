@@ -9,11 +9,12 @@ export const Divider = styled.div`
     border: 0;
 
     ${media.greaterThan('medium')`
+      display: flex;
+      flex-direction: column;
       width: 1px;
-      height: 100vh;
-      margin: ${theme.spacings.xxlarge} auto ${theme.spacings.medium};
+      height: 100%;
+      margin: ${theme.spacings.medium} auto;
       background: rgba(181, 181, 181, 0.3);
-      border: 0;
     `}
   `}
 `

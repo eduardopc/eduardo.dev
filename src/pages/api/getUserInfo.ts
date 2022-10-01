@@ -6,7 +6,7 @@ export async function getData() {
     .then((response) => {
       return response.items
     })
-    .catch((err) => {
+    .catch(() => {
       return {
         jsonData: []
       }

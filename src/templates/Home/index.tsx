@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import { KeyboardArrowRight } from '@styled-icons/material-outlined'
 
 import Base from 'templates/Base'
@@ -23,18 +23,16 @@ export type TArticles = {
   jsonData: IArticle[]
 }
 
-const Home = ({ jsonData }: any) => {
-  const [mediumData, setMediumData] = useState([])
+const Home = ({ jsonData }: TArticles) => {
+  const articles = useMemo(
+    () =>
+      jsonData
+        .filter((article: IArticle) => article.categories.length > 0)
+        .slice(0, jsonData.length),
+    [jsonData]
+  )
 
-  useEffect(() => {
-    if (jsonData.length) {
-      setMediumData(
-        jsonData
-          .filter((article: IArticle) => article.categories.length > 0)
-          .slice(0, jsonData.length)
-      )
-    }
-  }, [jsonData])
+  console.log(articles)
 
   return (
     <Base>
@@ -46,7 +44,7 @@ const Home = ({ jsonData }: any) => {
             {MEDIUMARTICLES.articles}
           </Heading>
           <S.Grid>
-            {mediumData.map((item: IArticle) => (
+            {articles.map((item: IArticle) => (
               <S.Link key={item.title}>
                 <a
                   href={item.link}
@@ -63,6 +61,7 @@ const Home = ({ jsonData }: any) => {
                 href={MEDIUMARTICLES.uri}
                 title={MEDIUMARTICLES.title}
                 target="_blank"
+                rel="noreferrer"
               >
                 <p>Demais Artigos</p>
               </a>

@@ -6,9 +6,9 @@ import { SKILLS } from 'languages'
 
 export type LineColors = 'primary' | 'secondary'
 
-const tags = SKILLS.tags.sort()
-
 const Skills = () => {
+  const tagsSkills = useMemo(() => SKILLS.tags.sort(), [])
+
   return (
     <S.Wrapper>
       <S.DotsSection>{'. . .'}</S.DotsSection>
@@ -17,7 +17,7 @@ const Skills = () => {
           {SKILLS.skills}
         </Heading>
         <S.TagsContainer>
-          {tags.map((tag) => (
+          {tagsSkills.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
         </S.TagsContainer>
