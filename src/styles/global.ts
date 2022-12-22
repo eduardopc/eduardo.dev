@@ -49,17 +49,29 @@ const GlobalStyles: GlobalStyleComponent<
       box-sizing: inherit;
     }
   }
-  ${({ theme, removeBg }) => css`
+  ${({ theme }) => css`
     html {
       font-size: 62.5%;
     }
     body {
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.medium};
-      ${!removeBg &&
-      css`
-        background-color: ${theme.colors.mainBg};
-      `}
+      background: linear-gradient(-45deg, #485563, #29323c, #23a6d5, #29323c);
+      background-size: 400% 400%;
+      animation: gradient 20s ease infinite;
+      height: 100vh;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
   `}
 `

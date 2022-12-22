@@ -9,7 +9,7 @@ export const wrapperModifiers = {
   `,
 
   small: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.sizes.large};
+    font-size: ${theme.font.sizes.xlarge};
 
     &::after {
       width: 2rem;

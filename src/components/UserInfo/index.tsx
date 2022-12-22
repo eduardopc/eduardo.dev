@@ -1,10 +1,38 @@
+import { ReactElement, useMemo } from 'react'
+import { Medium, Linkedin, Github, Instagram } from '@styled-icons/fa-brands'
+
 import Heading from 'components/Heading'
-import Skills from 'components/Skills'
 import SocialLinks from 'components/SocialLinks'
 import { SIDEINFO } from 'languages'
 import * as S from './styles'
+import Skills from 'components/Skills'
 
-const UserInfo = () => {
+const UserInfo = (): ReactElement => {
+  const socialMedias = useMemo(() => {
+    return [
+      {
+        socialMedia: 'medium',
+        icon: <Medium title="Medium" size={24} />,
+        url: 'https://medium.com/@pacheco.eduardo'
+      },
+      {
+        socialMedia: 'linkedin',
+        icon: <Linkedin title="LinkedIn" size={24} />,
+        url: 'https://www.linkedin.com/in/eduardopachecoceleste/'
+      },
+      {
+        socialMedia: 'github',
+        icon: <Github title="Github" size={24} />,
+        url: 'https://github.com/eduardopc'
+      },
+      {
+        socialMedia: 'instagram',
+        icon: <Instagram title="Medium" size={24} />,
+        url: 'https://www.instagram.com/eduardo.pacheco/'
+      }
+    ]
+  }, [])
+
   return (
     <S.Wrapper>
       <S.ImageContent>
@@ -17,7 +45,7 @@ const UserInfo = () => {
         </Heading>
       </S.Role>
       <S.Description>{SIDEINFO.description}</S.Description>
-      <SocialLinks />
+      <SocialLinks socialMedias={socialMedias} />
       <Skills />
     </S.Wrapper>
   )

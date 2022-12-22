@@ -1,7 +1,4 @@
 import styled, { css } from 'styled-components'
-import media from 'styled-media-query'
-
-import * as HeadingStyles from 'components/Heading/styles'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -16,8 +13,8 @@ export const ImageContent = styled.div`
 export const Image = styled.img`
   ${({ theme }) => css`
     background-color: ${theme.colors.primary};
-    width: 12.5rem;
-    height: 12.5rem;
+    width: 16.5rem;
+    height: 16.5rem;
     border-radius: 100%;
     margin-bottom: ${theme.spacings.xsmall};
   `}

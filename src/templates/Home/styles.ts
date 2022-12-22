@@ -1,15 +1,17 @@
 import styled, { css } from 'styled-components'
 
-import { Container } from 'components/Container'
-import media from 'styled-media-query'
-
-export const Main = styled(Container)`
+export const Main = styled.main`
   ${({ theme }) => css`
-    ${media.greaterThan('medium')`
-      display: grid;
-      grid-template-columns: 38rem 0.1rem 1fr;
-      gap: ${theme.grid.gutter};
-    `}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    max-width: ${theme.grid.homeContainer};
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(${theme.grid.gutter} / 2);
+    padding-right: calc(${theme.grid.gutter} / 2);
   `}
 `
 

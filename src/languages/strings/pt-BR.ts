@@ -6,7 +6,7 @@ export const FOOTER_STRINGS = {
 
 export const SIDEINFO_STRINGS = {
   name: 'Eduardo Pacheco Celeste',
-  role: 'Frontend Engineer',
+  role: 'Software Engineer',
   description:
     'Software Engineer com foco em desenvolvimento web e mobile utilizando respectivamente as tecnologias React e React Native.'
 }
@@ -34,6 +34,7 @@ export const SKILLS_STRINGS = {
     'Selenium',
     'Appium',
     'WebdriverIO',
-    'Flutter'
+    'Flutter',
+    'React Testing Library'
   ]
 }

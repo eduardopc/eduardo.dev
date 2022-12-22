@@ -6,7 +6,7 @@ export const SocialLinks = styled.ul`
   ${({ theme }) => css`
     display: flex;
     margin-top: ${theme.spacings.large};
-    justify-content: space-around;
+    justify-content: space-evenly;
   `}
 `
 

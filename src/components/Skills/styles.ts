@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.small};
+    padding-left: calc(${theme.grid.gutter} / 2);
+    padding-right: calc(${theme.grid.gutter} / 2);
   `}
 `
 
