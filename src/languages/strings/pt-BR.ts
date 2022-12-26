@@ -38,3 +38,13 @@ export const SKILLS_STRINGS = {
     'React Testing Library'
   ]
 }
+
+export const NOT_FOUND_STRINGS = {
+  title: 'Page not found :(',
+  description:
+    'Ops, não foi possível acessar a página solicitada ou a mesmo foi removida'
+}
+
+export const TEXT_BUTTONS = {
+  backToHome: 'Voltar para a Home'
+}
