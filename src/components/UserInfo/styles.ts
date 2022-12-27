@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -17,6 +18,12 @@ export const Image = styled.img`
     height: 16.5rem;
     border-radius: 100%;
     margin-bottom: ${theme.spacings.xsmall};
+
+    ${media.lessThan('medium')`
+      margin-top: ${theme.spacings.medium};
+      width: 14.5rem;
+      height: 14.5rem;
+    `}
   `}
 `
 

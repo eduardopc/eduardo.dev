@@ -1,3 +1,4 @@
+import HamburgerMenu from 'components/HamburgerMenu'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import NextNProgress from 'nextjs-progressbar'
@@ -26,6 +27,7 @@ function App({ Component, pageProps }: AppProps) {
         height={4}
         showOnShallow={true}
       />
+      <HamburgerMenu />
       <Component {...pageProps} />
     </ThemeProvider>
   )

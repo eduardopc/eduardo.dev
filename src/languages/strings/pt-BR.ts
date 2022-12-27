@@ -42,7 +42,7 @@ export const SKILLS_STRINGS = {
 export const NOT_FOUND_STRINGS = {
   title: 'Page not found :(',
   description:
-    'Ops, não foi possível acessar a página solicitada ou a mesmo foi removida'
+    'Ops, não foi possível acessar a página solicitada ou a mesma foi removida'
 }
 
 export const TEXT_BUTTONS = {
