@@ -1,11 +1,18 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div`
+type TWrapper = {
+  isOpen: boolean
+}
+
+export const Wrapper = styled.div<TWrapper>`
   // para deixar o footer sempre na parte de baixo da tela
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: space-between;
+  ${({ isOpen }) => css`
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    overflow: ${isOpen ? 'hidden' : 'initial'};
+  `}
 `
 
 export const Content = styled.div`

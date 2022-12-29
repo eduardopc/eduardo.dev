@@ -8,9 +8,9 @@ type TClicked = {
 export const MenuLabel = styled.label<TClicked>`
   ${({ clicked }) => css`
     background-color: ${clicked ? 'transparent' : 'rgba(54, 241, 205, 0.8)'};
-    position: fixed;
-    top: 3rem;
-    left: 3rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
     border-radius: 50%;
     height: 3.5rem;
     width: 3.5rem;
@@ -20,8 +20,8 @@ export const MenuLabel = styled.label<TClicked>`
     text-align: center;
 
     ${media.greaterThan('medium')`
-      top: 4rem;
-      left: 4rem;
+      top: 3rem;
+      left: 3rem;
       height: 6rem;
       width: 6rem;
     `}
@@ -31,8 +31,8 @@ export const MenuLabel = styled.label<TClicked>`
 export const NavBackground = styled.div<TClicked>`
   ${({ theme, clicked }) => css`
     position: fixed;
-    top: 2.2rem;
-    left: 2.2rem;
+    top: 1rem;
+    left: 1rem;
     background-image: radial-gradient(
       ${theme.colors.primary},
       ${theme.colors.secondary},
@@ -46,8 +46,8 @@ export const NavBackground = styled.div<TClicked>`
     transition: transform 0.8s;
 
     ${media.greaterThan('medium')`
-      top: 4.5rem;
-      left: 4.5rem;
+      top: 3.5rem;
+      left: 3.5rem;
     `}
   `}
 `

@@ -1,26 +1,30 @@
+import React from 'react'
+import { useHome } from 'contexts/HomeContext'
 import Link from 'next/link'
-import React, { useState } from 'react'
 
 import * as S from './styles'
 
 const HamburgerMenu = () => {
-  const [click, setClick] = useState(false)
-  const handleClick = () => setClick((prevState) => !prevState)
+  const { menuIsOpen, openMenu } = useHome()
 
   return (
     <>
-      <S.MenuLabel clicked={click} htmlFor="navi-toggle" onClick={handleClick}>
-        <S.Icon clicked={click}>&nbsp;</S.Icon>
+      <S.MenuLabel
+        clicked={menuIsOpen}
+        htmlFor="navi-toggle"
+        onClick={openMenu}
+      >
+        <S.Icon clicked={menuIsOpen}>&nbsp;</S.Icon>
       </S.MenuLabel>
-      <S.NavBackground clicked={click}>&nbsp;</S.NavBackground>
+      <S.NavBackground clicked={menuIsOpen}>&nbsp;</S.NavBackground>
 
-      <S.Navigation clicked={click}>
+      <S.Navigation clicked={menuIsOpen}>
         <S.List>
           <Link href="/" passHref>
-            <S.ItemLink onClick={handleClick}>Home</S.ItemLink>
+            <S.ItemLink onClick={openMenu}>Home</S.ItemLink>
           </Link>
           <Link href="/about" passHref>
-            <S.ItemLink onClick={handleClick}>About</S.ItemLink>
+            <S.ItemLink onClick={openMenu}>About</S.ItemLink>
           </Link>
         </S.List>
       </S.Navigation>
