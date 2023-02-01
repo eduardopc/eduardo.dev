@@ -1,4 +1,5 @@
-import { ReactElement, useMemo } from 'react'
+import { ReactElement, useMemo, useState } from 'react'
+import { motion } from 'framer-motion'
 import { Medium, Linkedin, Github, Instagram } from '@styled-icons/fa-brands'
 
 import Heading from 'components/Heading'
@@ -8,6 +9,7 @@ import * as S from './styles'
 import Skills from 'components/Skills'
 
 const UserInfo = (): ReactElement => {
+  const [showPersonalInfo, setShowPersonalInfo] = useState(false)
   const socialMedias = useMemo(() => {
     return [
       {
@@ -33,18 +35,55 @@ const UserInfo = (): ReactElement => {
     ]
   }, [])
 
+  const handleOnHover = () => {
+    setTimeout(() => {
+      setShowPersonalInfo((prevState) => !prevState)
+    }, 500)
+  }
+
   return (
     <S.Wrapper>
       <S.ImageContent>
-        <S.Image src="/img/me.jpeg" alt="my picture" role="image" />
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{
+            layout: {
+              duration: 1,
+              type: 'just'
+            }
+          }}
+          layout
+          onHoverStart={handleOnHover}
+          onHoverEnd={handleOnHover}
+        >
+          <S.Image
+            src="/img/me.jpeg"
+            alt="my picture"
+            role="image"
+            shake={!showPersonalInfo}
+          />
+          <Heading size="medium">{SIDEINFO.name}</Heading>
+        </motion.div>
       </S.ImageContent>
-      <Heading size="medium">{SIDEINFO.name}</Heading>
-      <S.Role>
-        <Heading size="small" color="secondary">
-          {SIDEINFO.role}
-        </Heading>
-      </S.Role>
-      <S.Description>{SIDEINFO.description}</S.Description>
+
+      {showPersonalInfo && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{
+            delay: 1
+          }}
+          animate={{
+            opacity: 1
+          }}
+        >
+          <S.Role>
+            <Heading size="small" color="secondary">
+              {SIDEINFO.role}
+            </Heading>
+          </S.Role>
+          <S.Description>{SIDEINFO.description}</S.Description>
+        </motion.div>
+      )}
       <SocialLinks socialMedias={socialMedias} />
       <Skills />
     </S.Wrapper>
