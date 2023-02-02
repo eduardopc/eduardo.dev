@@ -23,8 +23,16 @@ export const Image = styled.img<ImageProps>`
     border-radius: 100%;
     margin-bottom: ${theme.spacings.xsmall};
 
-    animation: ${shake &&
-    'shake 4s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite'};
+    ${media.greaterThan('medium')`
+    animation: ${
+      shake && 'shake 4s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite'
+    }`}
+
+    ${media.lessThan('medium')`
+      margin-top: ${theme.spacings.medium};
+      width: 14.5rem;
+      height: 14.5rem;
+    `}
 
     @keyframes shake {
       10%,
@@ -48,12 +56,6 @@ export const Image = styled.img<ImageProps>`
         transform: translate3d(4px, 0, 0);
       }
     }
-
-    ${media.lessThan('medium')`
-      margin-top: ${theme.spacings.medium};
-      width: 14.5rem;
-      height: 14.5rem;
-    `}
   `}
 `
 

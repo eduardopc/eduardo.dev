@@ -1,15 +1,42 @@
-import { ReactElement, useMemo, useState } from 'react'
+import { ReactElement, useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Medium, Linkedin, Github, Instagram } from '@styled-icons/fa-brands'
 
 import Heading from 'components/Heading'
 import SocialLinks from 'components/SocialLinks'
 import { SIDEINFO } from 'languages'
-import * as S from './styles'
 import Skills from 'components/Skills'
+import { getWindowDimensions } from 'utils'
+import { Breakpoints } from 'utils/constants'
+
+import * as S from './styles'
 
 const UserInfo = (): ReactElement => {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  )
   const [showPersonalInfo, setShowPersonalInfo] = useState(false)
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions())
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    setShowPersonalInfo(windowDimensions?.width > Breakpoints.TABLET)
+  }, [windowDimensions])
+
+  const handleOnHover = () => {
+    setTimeout(() => {
+      windowDimensions?.width > Breakpoints.TABLET &&
+        setShowPersonalInfo((prevState) => !prevState)
+    }, 500)
+  }
+
   const socialMedias = useMemo(() => {
     return [
       {
@@ -35,12 +62,6 @@ const UserInfo = (): ReactElement => {
     ]
   }, [])
 
-  const handleOnHover = () => {
-    setTimeout(() => {
-      setShowPersonalInfo((prevState) => !prevState)
-    }, 500)
-  }
-
   return (
     <S.Wrapper>
       <S.ImageContent>
@@ -60,13 +81,13 @@ const UserInfo = (): ReactElement => {
             src="/img/me.jpeg"
             alt="my picture"
             role="image"
-            shake={!showPersonalInfo}
+            shake={showPersonalInfo}
           />
           <Heading size="medium">{SIDEINFO.name}</Heading>
         </motion.div>
       </S.ImageContent>
 
-      {showPersonalInfo && (
+      {!showPersonalInfo && (
         <motion.div
           initial={{ opacity: 0 }}
           transition={{
